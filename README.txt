@@ -1,16 +1,39 @@
-Toolspea Website Clone archive
-Source: https://thebluedesert.com/
-Mode: entire
-Captured: 2026-09-24T17:36:24.437Z
-Pages: 1 · Assets: 21 · Size: 4.3 MB
+# The Blue Desert
 
-How to open: unzip the archive and open index.html in any browser.
-Internal links between downloaded pages are rewritten to relative paths, so you can browse offline.
+An offline, interactive clone of [The Blue Desert](https://thebluedesert.com/), an immersive WebGL storytelling experience by Adoratorio Studio.
 
-Known limitations:
-- Server-dependent features (forms, search, login, checkout, comments) only work on the live site.
-- Content rendered by JavaScript after page load may be missing.
-- Pages behind authentication, paywalls or bot protection are never downloaded.
-- Only assets you enabled in the options were fetched; see assets.csv for anything skipped.
+The project preserves the original client-side runtime, including the animated loader, WebGL scenes, chapter navigation, custom cursor, scroll-driven transitions, atmospheric audio, responsive mobile gate, and interactive visual effects.
 
-Rights: the archived content stays the copyright of its owner. You are responsible for how you use it.
+## Run locally
+
+From the project directory, start the static server:
+
+```powershell
+python -m http.server 4173
+```
+
+Then open:
+
+- Homepage: http://localhost:4173/
+- Archive route: http://localhost:4173/archive-true/
+
+The site is designed for a desktop browser. On smaller screens it keeps the original rotate-device experience.
+
+## Project structure
+
+- `index.html` - homepage application shell and SEO/social metadata
+- `archive-true/index.html` - alternate route using the same interactive runtime
+- `assets/` - bundled JavaScript, CSS, fonts, icons, and interface artwork
+- `audio/` - ambient music, sound effects, and chapter voiceovers
+- `images/` - chapter artwork and text-card graphics
+- `svg/` - interface and navigation artwork
+- `video/` - loader video
+- `webgl/` - Draco decoder, models, HDR environment, and scene textures
+
+## Verification
+
+Both routes have been checked locally in desktop and mobile viewports. The runtime loads the WebGL canvas, custom cursor, loader, responsive mobile message, chapter navigation, audio assets, and scene assets without failed network requests.
+
+## Attribution
+
+This repository contains an offline copy of third-party creative work. The original content, artwork, code, music, and brand remain the property of their respective owners. This clone is intended for local study and reference.
